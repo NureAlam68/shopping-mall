@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Earbuds",
+      "image": "https://i.ibb.co.com/8jcWcCV/wireless-earbuds-with-neon-cyberpunk-style-lighting.jpg",
+      "description": "Bluetooth wireless earbuds with noise-cancellation and 24-hour battery life.",
+      "price": 99.99,
+      "category": "Electronics",
+      "isFeatured": true
+    },
+    {
+      "id": 2,
+      "name": "Smartwatch",
+      "image": "https://i.ibb.co.com/k6pyb7f/futuristic-hologram-smartwatch-wearable-technology.jpg",
+      "description": "Waterproof smartwatch with fitness tracking, heart rate monitor, and GPS.",
+      "price": 199.99,
+      "category": "Electronics",
+      "isFeatured": false
+    },
+    {
+      "id": 3,
+      "name": "4K Ultra HD TV",
+      "image": "https://i.ibb.co.com/tLnqsGD/view-computer-monitor-display.jpg",
+      "description": "55-inch 4K Ultra HD Smart TV with HDR and voice control.",
+      "price": 499.99,
+      "category": "Electronics",
+      "isFeatured": true
+    },
+    {
+      "id": 4,
+      "name": "Luxury Perfume",
+      "image": "https://i.ibb.co.com/Bq7QYdb/1152.jpg",
+      "description": "A signature fragrance with a blend of floral and musky notes.",
+      "price": 129.99,
+      "category": "Perfume",
+      "isFeatured": true
+    },
+    {
+      "id": 5,
+      "name": "Luxury Lipstick",
+      "image": "https://i.ibb.co.com/6H7NGYL/191.jpg",
+      "description": "Long-lasting matte lipstick available in multiple shades for a bold look.",
+      "price": 29.99,
+      "category": "Beauty",
+      "isFeatured": true
+    },
+    {
+      "id": 6,
+      "name": "Facial Serum",
+      "image": "https://i.ibb.co.com/hLhHHLf/1432.jpg",
+      "description": "Vitamin C facial serum for brightening and hydrating the skin.",
+      "price": 49.99,
+      "category": "Beauty",
+      "isFeatured": false
+    }
+  ]
+  
