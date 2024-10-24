@@ -9,6 +9,21 @@ const App = () => {
     status: "cart",
   });
 
+  const [selectedProducts, setSelectedProducts] = useState([]);
+
+  const handleSelectedProduct = (product) => {
+    const isExist = selectedProducts.find(
+      (preProduct) => preProduct.id === product.id
+    );
+
+    if (isExist) {
+      alert("Already added !");
+    } else {
+      const newProducts = [...selectedProducts, product];
+      setSelectedProducts(newProducts);
+    }
+  };
+
   const handleActive = (status) => {
     if (status === "cart") {
       setIsActive({
@@ -26,9 +41,14 @@ const App = () => {
   return (
     <div className="max-w-[1600px] container mx-auto px-[140px]">
       <Navbar></Navbar>
-      <div className="flex justify-around">
-        <AllProducts></AllProducts>
-        <CartContainer handleActive={handleActive} isActive={isActive}></CartContainer>
+      <div className="flex gap-6">
+        <AllProducts
+          handleSelectedProduct={handleSelectedProduct}
+        ></AllProducts>
+        <CartContainer
+          handleActive={handleActive}
+          isActive={isActive}
+        ></CartContainer>
       </div>
     </div>
   );

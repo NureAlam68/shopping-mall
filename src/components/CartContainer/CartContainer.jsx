@@ -5,7 +5,7 @@ import './CartContainer.css'
 
 const CartContainer = ({handleActive, isActive}) => {
     return (
-        <div>
+        <div className='w-2/5'>
             <h1 className="text-3xl font-bold">Cart container</h1>
             <div className="flex justify-around mt-6">
                 <div onClick={() => handleActive("cart")} className={`${isActive.cart? "btn active" : "btn"}`}>Cart</div>
