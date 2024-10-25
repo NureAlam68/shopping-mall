@@ -14,8 +14,7 @@ const AllProducts = ({handleSelectedProduct}) => {
 
 
     return (
-        <div className="w-3/5">
-            <h1 className="text-3xl font-bold">All products</h1>
+        <div className="w-3/5 mt-10">
             <div className="grid grid-cols-2 gap-6">
             {
                 products.map(product => <Product key={product.id} product={product} handleSelectedProduct={handleSelectedProduct}></Product>)

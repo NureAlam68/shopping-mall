@@ -1,4 +1,6 @@
-const Navbar = () => {
+import PropTypes from 'prop-types';
+
+const Navbar = ({selectedProducts}) => {
   return (
     <div className="py-10">
       <div className="navbar bg-base-100">
@@ -19,8 +21,8 @@ const Navbar = () => {
             <li>
               <a>Product</a>
             </li>
-            <li>
-              <a>Cart-1</a>
+            <li className="text-[20px]">
+              <a>Cart-{selectedProducts.length}</a>
             </li>
           </ul>
         </div>
@@ -31,5 +33,9 @@ const Navbar = () => {
     </div>
   );
 };
+
+Navbar.propTypes = {
+  selectedProducts: PropTypes.array.isRequired
+}
 
 export default Navbar;

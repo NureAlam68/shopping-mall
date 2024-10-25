@@ -9,6 +9,7 @@ const App = () => {
     status: "cart",
   });
 
+  //when add one product two time then give alert
   const [selectedProducts, setSelectedProducts] = useState([]);
 
   const handleSelectedProduct = (product) => {
@@ -40,7 +41,7 @@ const App = () => {
 
   return (
     <div className="max-w-[1600px] container mx-auto px-[140px]">
-      <Navbar></Navbar>
+      <Navbar selectedProducts={selectedProducts}></Navbar>
       <div className="flex gap-6">
         <AllProducts
           handleSelectedProduct={handleSelectedProduct}
@@ -48,6 +49,7 @@ const App = () => {
         <CartContainer
           handleActive={handleActive}
           isActive={isActive}
+          selectedProducts={selectedProducts}
         ></CartContainer>
       </div>
     </div>
