@@ -9,9 +9,21 @@ const App = () => {
     status: "cart",
   });
 
-  //when add one product two time then give alert
+  //when add one product two time then give alert state
   const [selectedProducts, setSelectedProducts] = useState([]);
 
+  const [totalPrice, setTotalPrice] = useState(500);
+
+  const handleIncreasePrice = price => {
+    setTotalPrice(totalPrice + price)
+  }
+
+  const handleDecreasePrice = price => {
+    setTotalPrice(totalPrice - price)
+  }
+   
+
+  // when add more than one then give alert function
   const handleSelectedProduct = (product) => {
     const isExist = selectedProducts.find(
       (preProduct) => preProduct.id === product.id
@@ -20,10 +32,17 @@ const App = () => {
     if (isExist) {
       alert("Already added !");
     } else {
+      handleIncreasePrice(product.price)  // for add money when add product
       const newProducts = [...selectedProducts, product];
       setSelectedProducts(newProducts);
     }
   };
+
+  const handleDelete = product => {
+    handleDecreasePrice(product.price)
+    const remainingProduct = selectedProducts.filter(preProduct => preProduct.id !== product.id);
+    setSelectedProducts(remainingProduct);
+  }
 
   const handleActive = (status) => {
     if (status === "cart") {
@@ -41,7 +60,7 @@ const App = () => {
 
   return (
     <div className="max-w-[1600px] container mx-auto px-[140px]">
-      <Navbar selectedProducts={selectedProducts}></Navbar>
+      <Navbar selectedProducts={selectedProducts} totalPrice={totalPrice}></Navbar>
       <div className="flex gap-6">
         <AllProducts
           handleSelectedProduct={handleSelectedProduct}
@@ -50,6 +69,7 @@ const App = () => {
           handleActive={handleActive}
           isActive={isActive}
           selectedProducts={selectedProducts}
+          handleDelete={ handleDelete}
         ></CartContainer>
       </div>
     </div>

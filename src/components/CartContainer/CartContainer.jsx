@@ -3,7 +3,7 @@ import About from '../About/About';
 import Cart from '../Cart/Cart';
 import './CartContainer.css'
 
-const CartContainer = ({handleActive, isActive, selectedProducts}) => {
+const CartContainer = ({handleActive, isActive, selectedProducts,  handleDelete}) => {
     return (
         <div className='w-2/5 border rounded-[16px] mt-10'>
             <div className="flex justify-around mt-6">
@@ -11,7 +11,7 @@ const CartContainer = ({handleActive, isActive, selectedProducts}) => {
                 <div onClick={() => handleActive("about")} className={`${isActive.cart? "btn" : "active btn"}`}>About</div>
             </div>
             {
-                isActive.cart ? <Cart selectedProducts={selectedProducts}></Cart> : <About></About>
+                isActive.cart ? <Cart selectedProducts={selectedProducts}  handleDelete={ handleDelete}></Cart> : <About></About>
             }
         </div>
     );
@@ -20,7 +20,8 @@ const CartContainer = ({handleActive, isActive, selectedProducts}) => {
 CartContainer.propTypes = {
     handleActive: PropTypes.func.isRequired,
     isActive: PropTypes.object.isRequired,
-    selectedProducts: PropTypes.array.isRequired
+    selectedProducts: PropTypes.array.isRequired,
+    handleDelete: PropTypes.func.isRequired
 }
 
 export default CartContainer;
